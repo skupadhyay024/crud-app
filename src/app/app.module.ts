@@ -1,12 +1,16 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpModule } from '@angular/http';
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavComponent } from './components/nav/nav.component';
 import { EmployeeListComponent } from './components/employee-list/employee-list.component';
 import { HomeComponent } from './components/home/home.component';
-import { MaterialModule } from '@angular/material';
+import { EmployeeService } from './services/employee.service';
+
 
 
 
@@ -19,10 +23,12 @@ import { MaterialModule } from '@angular/material';
     HomeComponent
   ],
   imports: [
-    BrowserModule,
+    BrowserModule, FormsModule,
+    HttpModule,
+    ReactiveFormsModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [EmployeeService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
